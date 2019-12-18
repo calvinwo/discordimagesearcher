@@ -26,6 +26,16 @@ const config = {
     "welcomeMessage": "Say hello to {{user}}, everyone! We all need a warm welcome sometimes :D",
     "welcomeEnabled": "false"
   },
+  "default" : {
+    "prefix": "-",
+    "modLogChannel": "mod-log",
+    "modRole": "Moderator",
+    "adminRole": "Administrator",
+    "systemNotice": "true", // This gives a notice when a user tries to run a command that they do not have permission to use.
+    "welcomeChannel": "welcome",
+    "welcomeMessage": "Say hello to {{user}}, everyone! We all need a warm welcome sometimes :D",
+    "welcomeEnabled": "false"
+  },
 
   // PERMISSION LEVEL DEFINITIONS.
 
