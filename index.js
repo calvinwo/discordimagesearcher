@@ -80,3 +80,11 @@ const init = async () => {
 };
 
 init();
+
+var http = require ('http');
+const PORT = process.env.PORT || 3000;
+http.createServer(function (req, res) {
+
+}).listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);
+});
