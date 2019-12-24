@@ -1,6 +1,6 @@
 const config = {
   // Bot Owner, level 10 by default. A User ID. Should never be anything else than the bot owner's ID.
-  "ownerID": "123456789123456",
+  "ownerID": "286385144464408580",
 
   // Bot Admins, level 9 by default. Array of user ID strings.
   "admins": [],
@@ -9,7 +9,7 @@ const config = {
   "support": [],
 
   // Your Bot's Token. Available on https://discordapp.com/developers/applications/me
-  "token": "",
+  "token": "MzYyMDIyOTM2NTg2MjIzNjI4.XfmdyQ.VUDe_Hqrw6Otn9ND2tulYdU1M1I",
 
   // PERMISSION LEVEL DEFINITIONS.
   permLevels: [

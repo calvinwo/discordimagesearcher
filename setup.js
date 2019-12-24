@@ -50,16 +50,16 @@ let prompts = [
     await settings.set("default", defaultSettings);
   }
 
-  const answers = await inquirer.prompt(prompts);
+  //const answers = await inquirer.prompt(prompts);
 
-  if (answers.resetDefaults && answers.resetDefaults === "Yes") {
+  /*if (answers.resetDefaults && answers.resetDefaults === "Yes") {
     console.log("Resetting default guild settings...");
     await settings.set("default", defaultSettings);
-  }
+  }*/
 
   baseConfig = baseConfig
-    .replace("{{ownerID}}", answers.ownerID)
-    .replace("{{token}}", `"${answers.token}"`);
+    .replace("{{ownerID}}", process.env.OWNER_ID)
+    .replace("{{token}}", `"${process.env.BOT_TOKEN}"`);
 
   fs.writeFileSync("./config.js", baseConfig);
   console.log("REMEMBER TO NEVER SHARE YOUR TOKEN WITH ANYONE!");
