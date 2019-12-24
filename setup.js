@@ -59,7 +59,7 @@ let prompts = [
 
   baseConfig = baseConfig
     .replace("{{ownerID}}", process.env.OWNER_ID)
-    .replace("{{token}}", `"${process.env.BOT_TOKEN}"`);
+    .replace("{{token}}", `${process.env.BOT_TOKEN}`);
 
   fs.writeFileSync("./config.js", baseConfig);
   console.log("REMEMBER TO NEVER SHARE YOUR TOKEN WITH ANYONE!");
