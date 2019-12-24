@@ -53,9 +53,11 @@ let prompts = [
   //const answers = await inquirer.prompt(prompts);
 
   /*if (answers.resetDefaults && answers.resetDefaults === "Yes") {
-    console.log("Resetting default guild settings...");
-    await settings.set("default", defaultSettings);
+    
+    
   }*/
+  console.log("Resetting default guild settings...");
+  await settings.set("default", defaultSettings);
 
   baseConfig = baseConfig
     .replace("{{ownerID}}", process.env.OWNER_ID)
