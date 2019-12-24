@@ -73,7 +73,6 @@ const init = async () => {
   }
 
   // Here we login the client.
-  //client.login(client.config.token);
   client.login(process.env.BOT_TOKEN)
 
 // End top-level async/await function.
@@ -84,33 +83,19 @@ init();
 var http = require ('http');
 const PORT = process.env.PORT || 3000;
 http.createServer(function (req, res) {
-  res.end('hello');
+  let moment = require("moment");
+  let { version } = require("discord.js");
+  require("moment-duration-format");
+  res.end(
+    `= STATISTICS =\n
+  • Mem Usage  :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\n
+  • Uptime     :: ${moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}\n
+  • Users      :: ${client.users.size.toLocaleString()}\n
+  • Servers    :: ${client.guilds.size.toLocaleString()}\n
+  • Channels   :: ${client.channels.size.toLocaleString()}\n
+  • Discord.js :: ${version}\n
+  • Node       :: ${process.version}`
+  );
 }).listen(PORT, () => {
   console.log(`Our app is running on port ${ PORT }`);
 });
-
-startKeepAlive() 
-
-function startKeepAlive() {
-  setInterval(function() {
-      var options = {
-          host: 'https://powerful-caverns-88708.herokuapp.com/',
-          port: 80,
-          path: '/'
-      };
-      http.get(options, function(res) {
-          res.on('data', function(chunk) {
-              try {
-                  // optional logging... disable after it's working
-                  console.log("HEROKU RESPONSE: " + chunk);
-              } catch (err) {
-                  console.log(err.message);
-              }
-          });
-      }).on('error', function(err) {
-          console.log("Error: " + err.message);
-      });
-  }, 20 * 60 * 1000); // load every 20 minutes
-}
-
-startKeepAlive();
